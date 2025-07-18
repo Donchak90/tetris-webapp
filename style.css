@@ -1,12 +1,69 @@
+
 body {
-  background: #222;
+  margin: 0;
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
   color: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
   text-align: center;
-  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 24px;
+  margin-top: 20px;
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00;
+}
+
+button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 20px;
+  background: #ffcc00;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ffcc00;
+  cursor: pointer;
 }
 
 canvas {
   background: #000;
   display: block;
-  margin: 0 auto;
+  margin: 20px auto;
+  border: 5px solid #fff;
+  box-shadow: 0 0 15px #00f0ff, 0 0 30px #00f0ff inset;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+#background-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('logo.png');
+  background-repeat: no-repeat;
+  background-size: 200px;
+  width: 200px;
+  height: 200px;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+  animation: rotate-logo 60s linear infinite, pulse-logo 3s ease-in-out infinite;
+}
+
+@keyframes rotate-logo {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes pulse-logo {
+  0% { opacity: 0.05; }
+  50% { opacity: 0.12; }
+  100% { opacity: 0.05; }
+}
+
+p.hint {
+  font-size: 14px;
+  color: #aaa;
 }
